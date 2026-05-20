@@ -108,7 +108,7 @@ function processReceiverUpdate(data) {
 	}
 }
 
-function fetchData() {
+/**function fetchData() {
         if (FetchPending !== null && FetchPending.state() == 'pending') {
                 // don't double up on fetches, let the last one resolve
                 return;
@@ -155,6 +155,51 @@ function fetchData() {
                 $("#update_error_detail").text("AJAX call failed (" + status + (error ? (": " + error) : "") + "). Maybe dump1090 is no longer running?");
                 $("#update_error").css('display','block');
         });
+}**/
+
+var socket = null;
+
+function connectWebSocket() {
+
+        socket = new WebSocket("ws://localhost:8765");
+
+        socket.onopen = function() {
+                console.log("WebSocket Connected");
+        };
+
+        socket.onmessage = function(event) {
+
+                try {
+
+                        const data = JSON.parse(event.data);
+
+                        processReceiverUpdate(data);
+
+                        var now = data.now;
+
+                        for (var i = 0; i < PlanesOrdered.length; ++i) {
+                                var plane = PlanesOrdered[i];
+                                plane.updateTick(now, LastReceiverTimestamp);
+                        }
+
+                        refreshTableInfo();
+                        refreshSelected();
+
+                        LastReceiverTimestamp = now;
+                } catch (err) {
+                        console.error("WS Parse Error:", err);
+                }
+        };
+
+        socket.onclose = function() {
+                console.log("WebSocket, 2000");
+
+                setTimeout(connectWebSocket, 2000);
+        };
+
+        socket.onerror = function(err) {
+                console.error("WebSocket Error:", err);
+        };
 }
 
 var PositionHistorySize = 0;
@@ -308,11 +353,14 @@ function end_load_history() {
         reaper();
 
         // Setup our timer to poll from the server.
-        window.setInterval(fetchData, RefreshInterval);
+        //window.setInterval(fetchData, RefreshInterval);
         window.setInterval(reaper, 60000);
 
         // And kick off one refresh immediately.
-        fetchData();
+        //fetchData();
+
+        //start websocket
+        connectWebSocket();
 
 }
 
