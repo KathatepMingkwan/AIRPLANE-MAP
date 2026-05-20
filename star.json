@@ -1,0 +1,53 @@
+{
+  "star_waypoints": [
+    {
+      "STAR": "KALIM",
+      "lat": 7.8400,
+      "lon": 98.3000
+    },
+    {
+      "STAR": "BARON",
+      "lat": 7.9200,
+      "lon": 98.4500
+    },
+    {
+      "STAR": "STONE",
+      "lat": 7.9000,
+      "lon": 98.4100
+    },
+    {
+      "STAR": "MONBU",
+      "lat": 7.9000,
+      "lon": 98.4800
+    },
+    { "STAR": "PACUS", "lat": 7.8501, "lon": 98.4201 },
+    { "STAR": "RIZZO", "lat": 7.8702, "lon": 98.5102 },
+
+    { "STAR": "URGAD", "lat": 7.9001, "lon": 98.3001 },
+
+    { "STAR": "UBNEN", "lat": 7.9101, "lon": 98.2801 },
+    { "STAR": "ANPUB", "lat": 7.9201, "lon": 98.2701 },
+
+    { "STAR": "JUVEY", "lat": 7.8001, "lon": 98.2001 },
+    { "STAR": "RAWAI", "lat": 7.7801, "lon": 98.1801 },
+
+    { "STAR": "TARPU", "lat": 7.8301, "lon": 98.2501 },
+    { "STAR": "SATVA", "lat": 7.8401, "lon": 98.2601 },
+    { "STAR": "UPSAB", "lat": 7.8451, "lon": 98.2651 },
+    { "STAR": "SUSID", "lat": 7.8461, "lon": 98.2661 },
+    { "STAR": "IGEVI", "lat": 7.8471, "lon": 98.2671 },
+
+    { "STAR": "MILAN", "lat": 7.8601, "lon": 98.3101 },
+    { "STAR": "SAVSA", "lat": 7.8611, "lon": 98.3111 },
+    { "STAR": "MONBU", "lat": 7.8621, "lon": 98.3121 },
+    { "STAR": "ONETI", "lat": 7.8631, "lon": 98.3131 },
+
+    { "STAR": "SP312", "lat": 7.7501, "lon": 98.1501 },
+    { "STAR": "SP702", "lat": 7.7601, "lon": 98.1601 },
+    { "STAR": "SP801", "lat": 7.7701, "lon": 98.1701 },
+    { "STAR": "SP803", "lat": 7.7801, "lon": 98.1751 },
+
+    { "STAR": "EMRIT", "lat": 7.7811, "lon": 98.1761 },
+    { "STAR": "EPGOT", "lat": 7.7821, "lon": 98.1771 }
+  ]
+}
