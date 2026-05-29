@@ -15,6 +15,39 @@
       "seen": 0.5,
       "seen_pos": 0.5,
       "messages": 50
+    },
+
+    {
+      "hex":"880123",
+      "flight":"THA123",
+      "lat":8.0000,
+      "lon":98.3923,
+      "altitude":32000,
+      "speed":450,
+      "track":90,
+      "squawk":"7000",
+      "rssi":-18.2,
+      "seen":0.5,
+      "seen_pos":0.5,
+      "messages":50
+    }
+  ],
+
+  "aircraft2": [
+    {
+      "hex": "880123",
+      "flight": "THA456",
+      "lat": 10.0000,
+      "lon": 98.3923,
+      "altitude": 32000,
+      "speed": 450,
+      "track": 90,
+      "squawk": "7000",
+      "rssi": -18.2,
+      "seen": 0.5,
+      "seen_pos": 0.5,
+      "messages": 50
     }
   ]
+
 }
