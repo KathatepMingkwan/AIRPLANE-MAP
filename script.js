@@ -163,6 +163,8 @@ function connectWebSocket() {
 
         socket = new WebSocket("ws://localhost:8765");
 
+        //socket = new WebSocket("ws://192.168.137.7:8181/hawtio");
+
         socket.onopen = function() {
                 console.log("WebSocket Connected");
         };
@@ -201,6 +203,109 @@ function connectWebSocket() {
                 console.error("WebSocket Error:", err);
         };
 }
+
+// function fetchStompAttributes() {
+//     fetch(
+//         'http://192.168.137.7:8181/hawtio/activemq/attributes?nid=root-org.apache.activemq-Broker-amq-broker-clientConnectors-stomp'
+//     )
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('STOMP Attributes:', data);
+//     })
+//     .catch(error => {
+//         console.error('Fetch Error:', error);
+//     });
+// }
+
+// async function fetchAircraftData() {
+//     try {
+//         const response = await fetch(
+//             'tcp://localhost:61616'
+//         );
+
+//         const data = await response.json();
+
+//         processReceiverUpdate(data);
+
+//         const now = data.now;
+
+//         for (let i = 0; i < PlanesOrdered.length; i++) {
+//             PlanesOrdered[i].updateTick(now, LastReceiverTimestamp);
+//         }
+
+//         refreshTableInfo();
+//         refreshSelected();
+
+//         LastReceiverTimestamp = now;
+//     } catch (e) {
+//         console.error(e);
+//     }
+// }
+
+// setInterval(fetchAircraftData, 1000);
+
+// const client = new StompJs.Client({
+//     brokerURL: 'tcp_//10.76.100.83_57552'
+// });
+
+// client.onConnect = () => {
+//     client.subscribe('/topic/aircraft', message => {
+//         const data = JSON.parse(message.body);
+
+//         processReceiverUpdate(data);
+
+//         const now = data.now;
+
+//         for (let i = 0; i < PlanesOrdered.length; i++) {
+//             PlanesOrdered[i].updateTick(now, LastReceiverTimestamp);
+//         }
+
+//         refreshTableInfo();
+//         refreshSelected();
+
+//         LastReceiverTimestamp = now;
+//     });
+// };
+
+// client.activate();
+
+// const stompit = require('stompit');
+
+// const connectOptions = {
+//     host: '10.76.100.83',
+//     port: 57552,
+//     connectHeaders: {
+//         host: '/',
+//         login: '',
+//         passcode: ''
+//     }
+// };
+
+// stompit.connect(connectOptions, (error, client) => {
+//     if (error) {
+//         console.error('Connection error:', error);
+//         return;
+//     }
+
+//     const subscribeHeaders = {
+//         destination: '/topic/aircraft',
+//         ack: 'auto'
+//     };
+
+//     client.subscribe(subscribeHeaders, (error, message) => {
+//         if (error) {
+//             console.error('Subscribe error:', error);
+//             return;
+//         }
+
+//         message.readString('utf-8', (error, body) => {
+//             if (error) return;
+
+//             const data = JSON.parse(body);
+//             console.log('Received:', data);
+//         });
+//     });
+// });
 
 var PositionHistorySize = 0;
 function initialize() {
