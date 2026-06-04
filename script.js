@@ -105,6 +105,14 @@ function processReceiverUpdate(data) {
 
 		// Call the function update
 		plane.updateData(now, ac);
+
+                console.log({
+                        icao: plane.icao,
+                        position: plane.position,
+                        visible: plane.visible,
+                        seen_pos: plane.seen_pos,
+                        altitude: plane.altitude
+                });
 	}
 }
 
@@ -175,6 +183,8 @@ function connectWebSocket() {
 
                         const data = JSON.parse(event.data);
 
+                        console.log("AIRCRAFT:", data.aircraft[0]);
+
                         processReceiverUpdate(data);
 
                         var now = data.now;
@@ -185,6 +195,12 @@ function connectWebSocket() {
                         }       
 
                         refreshTableInfo();
+
+                        console.log({
+                                trackedAircraft: TrackedAircraft,
+                                trackedAircraftPositions: TrackedAircraftPositions
+                        });
+
                         refreshSelected();
 
                         LastReceiverTimestamp = now;

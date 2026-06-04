@@ -70,6 +70,7 @@ stompit.connect(connectOptions, (error, client) => {
                     track: data.Heading,
                     vert_rate: data.Baro_VR,
                     seen: 0,
+                    seen_pos: 0,
                     squawk: null,
                     rssi: 0,
                     position: [data.Lon, data.Lat]
