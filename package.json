@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "amqplib": "^1.0.6",
-    "npm": "^11.16.0",
+    "npm": "^12.0.1",
     "ol": "latest",
     "stompit": "^1.0.0",
     "ws": "^8.21.0"
